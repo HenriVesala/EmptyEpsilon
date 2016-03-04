@@ -12,6 +12,8 @@
 #include "sACNDMXDevice.h"
 #include "hardwareMappingEffects.h"
 
+#include <typeinfo>
+
 HardwareController::HardwareController()
 {
 }
@@ -252,8 +254,10 @@ void HardwareController::update(float delta)
     int idx = 0;
     for(HardwareOutputDevice* device : devices)
     {
-        for(int n=0; n<device->getChannelCount(); n++)
+        for(int n=0; n<device->getChannelCount(); n++) {
+
             device->setChannelData(n, channels[idx++]);
+        }
     }
 }
 

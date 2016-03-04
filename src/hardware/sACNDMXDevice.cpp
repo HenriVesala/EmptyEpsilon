@@ -56,10 +56,10 @@ bool StreamingAcnDMXDevice::configure(std::unordered_map<string, string> setting
 }
 
 //Set a hardware channel output. Value is 0.0 to 1.0 for no to max output.
-void StreamingAcnDMXDevice::setChannelData(int channel, float value)
+void StreamingAcnDMXDevice::setChannelData(int channel, int value)
 {
     if (channel >= 0 && channel < channel_count)
-        channel_data[channel] = int((value * 255.0) + 0.5);
+        channel_data[channel] = value;
 }
 
 //Return the number of output channels supported by this device.

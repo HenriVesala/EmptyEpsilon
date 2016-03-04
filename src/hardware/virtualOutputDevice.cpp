@@ -69,7 +69,7 @@ bool VirtualOutputDevice::configure(std::unordered_map<string, string> settings)
     return true;
 }
 
-void VirtualOutputDevice::setChannelData(int channel, float value)
+void VirtualOutputDevice::setChannelData(int channel, int value)
 {
     if (channel >= 0 && channel < 512)
         channel_data[channel].value = value;

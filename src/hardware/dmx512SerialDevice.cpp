@@ -53,10 +53,10 @@ bool DMX512SerialDevice::configure(std::unordered_map<string, string> settings)
 }
 
 //Set a hardware channel output. Value is 0.0 to 1.0 for no to max output.
-void DMX512SerialDevice::setChannelData(int channel, float value)
+void DMX512SerialDevice::setChannelData(int channel, int value)
 {
     if (channel >= 0 && channel < channel_count)
-        channel_data[channel] = int((value * 255.0) + 0.5);
+        channel_data[channel] = value;
 }
 
 //Return the number of output channels supported by this device.

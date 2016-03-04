@@ -13,17 +13,17 @@ public:
     
     virtual bool configure(std::unordered_map<string, string> settings) = 0;
     
-    virtual float onActive() = 0;
+    virtual int onActive() = 0;
     virtual void onInactive() {}
 };
 
 class HardwareMappingEffectStatic : public HardwareMappingEffect
 {
 private:
-    float value;
+    string value;
 public:
     virtual bool configure(std::unordered_map<string, string> settings);
-    virtual float onActive();
+    virtual int onActive();
 };
 
 class HardwareMappingEffectGlow : public HardwareMappingEffect
@@ -34,7 +34,7 @@ private:
     sf::Clock clock;
 public:
     virtual bool configure(std::unordered_map<string, string> settings);
-    virtual float onActive();
+    virtual int onActive();
     virtual void onInactive();
 };
 
@@ -46,7 +46,7 @@ private:
     sf::Clock clock;
 public:
     virtual bool configure(std::unordered_map<string, string> settings);
-    virtual float onActive();
+    virtual int onActive();
     virtual void onInactive();
 };
 
